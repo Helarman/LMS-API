@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_education_lessons",
+  "info": {
+    "displayName": "Lesson"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    }
+  }
+}

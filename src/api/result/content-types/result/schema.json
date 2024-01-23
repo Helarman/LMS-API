@@ -1,0 +1,48 @@
+{
+  "kind": "collectionType",
+  "collectionName": "results",
+  "info": {
+    "singularName": "result",
+    "pluralName": "results",
+    "displayName": "Item Results",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "lesson",
+        "examination",
+        "course"
+      ]
+    },
+    "item": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::item.item",
+      "inversedBy": "results"
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "results"
+    },
+    "fileLink": {
+      "type": "string"
+    },
+    "count": {
+      "type": "integer",
+      "default": 0
+    },
+    "progress": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    }
+  }
+}

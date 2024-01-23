@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_examinations_test_items",
+  "info": {
+    "displayName": "TestItem",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "count": {
+      "type": "integer",
+      "required": true,
+      "default": 1
+    },
+    "answerType": {
+      "type": "enumeration",
+      "enum": [
+        "select",
+        "detailed"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "answers": {
+      "type": "component",
+      "repeatable": true,
+      "component": "examinations.test-answer"
+    }
+  }
+}

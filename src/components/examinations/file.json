@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_examinations_files",
+  "info": {
+    "displayName": "file",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "pdf",
+        "text",
+        "video",
+        "audio"
+      ],
+      "required": true
+    },
+    "maxCount": {
+      "type": "integer",
+      "required": true,
+      "default": 5
+    }
+  }
+}

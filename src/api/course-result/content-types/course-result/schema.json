@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "course_results",
+  "info": {
+    "singularName": "course-result",
+    "pluralName": "course-results",
+    "displayName": "Course Results",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "course": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::course.course",
+      "inversedBy": "course_results"
+    },
+    "progress": {
+      "type": "integer",
+      "default": 0,
+      "required": true,
+      "min": 0,
+      "max": 100
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "course_results"
+    }
+  }
+}

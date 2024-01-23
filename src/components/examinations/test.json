@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_examinations_tests",
+  "info": {
+    "displayName": "Test",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "questions": {
+      "type": "component",
+      "repeatable": true,
+      "component": "examinations.test-item"
+    }
+  }
+}

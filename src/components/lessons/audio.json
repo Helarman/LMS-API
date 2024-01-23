@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_lessons_audio",
+  "info": {
+    "displayName": "Audio",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "file": {
+      "allowedTypes": [
+        "audios"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_examinations_test_answers",
+  "info": {
+    "displayName": "TestAnswer",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "isRight": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
