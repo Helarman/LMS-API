@@ -59,7 +59,10 @@ export interface ExaminationsTestItem extends Schema.Component {
     count: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<1>;
     answerType: Attribute.Enumeration<['select', 'detailed']>;
     image: Attribute.Media;
-    answers: Attribute.Component<'examinations.test-answer', true>;
+    answers: Attribute.Component<'examinations.test-answer', true> &
+      Attribute.SetMinMax<{
+        max: 6;
+      }>;
   };
 }
 

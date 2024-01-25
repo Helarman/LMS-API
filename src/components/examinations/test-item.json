@@ -33,7 +33,8 @@
     "answers": {
       "type": "component",
       "repeatable": true,
-      "component": "examinations.test-answer"
+      "component": "examinations.test-answer",
+      "max": 6
     }
   }
 }

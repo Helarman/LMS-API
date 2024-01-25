@@ -756,15 +756,15 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
       'manyToMany',
       'api::course.course'
     >;
-    results: Attribute.Relation<
-      'plugin::users-permissions.user',
-      'manyToMany',
-      'api::result.result'
-    >;
     course_results: Attribute.Relation<
       'plugin::users-permissions.user',
       'oneToMany',
       'api::course-result.course-result'
+    >;
+    results: Attribute.Relation<
+      'plugin::users-permissions.user',
+      'oneToMany',
+      'api::result.result'
     >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
@@ -947,7 +947,7 @@ export interface ApiItemItem extends Schema.CollectionType {
       'api::course.course'
     >;
     description: Attribute.String;
-    results: Attribute.Relation<
+    item_results: Attribute.Relation<
       'api::item.item',
       'oneToMany',
       'api::result.result'
@@ -971,26 +971,25 @@ export interface ApiResultResult extends Schema.CollectionType {
     description: '';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     type: Attribute.Enumeration<['lesson', 'examination', 'course']>;
+    user: Attribute.Relation<
+      'api::result.result',
+      'manyToOne',
+      'plugin::users-permissions.user'
+    >;
+    fileLink: Attribute.String;
+    count: Attribute.Integer & Attribute.DefaultTo<0>;
+    progress: Attribute.Integer & Attribute.DefaultTo<0>;
     item: Attribute.Relation<
       'api::result.result',
       'manyToOne',
       'api::item.item'
     >;
-    users: Attribute.Relation<
-      'api::result.result',
-      'manyToMany',
-      'plugin::users-permissions.user'
-    >;
-    fileLink: Attribute.String;
-    count: Attribute.Integer & Attribute.DefaultTo<0>;
-    progress: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
       'api::result.result',
       'oneToOne',

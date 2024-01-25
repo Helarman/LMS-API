@@ -72,16 +72,16 @@
       "target": "api::course.course",
       "mappedBy": "users"
     },
-    "results": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::result.result",
-      "mappedBy": "users"
-    },
     "course_results": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::course-result.course-result",
+      "mappedBy": "user"
+    },
+    "results": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::result.result",
       "mappedBy": "user"
     }
   }

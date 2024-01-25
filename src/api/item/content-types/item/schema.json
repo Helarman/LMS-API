@@ -43,7 +43,7 @@
     "description": {
       "type": "string"
     },
-    "results": {
+    "item_results": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::result.result",
