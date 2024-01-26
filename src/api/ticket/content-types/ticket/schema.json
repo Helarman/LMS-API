@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tickets",
+  "info": {
+    "singularName": "ticket",
+    "pluralName": "tickets",
+    "displayName": "Tickets",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "email": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "subject": {
+      "type": "string"
+    }
+  }
+}

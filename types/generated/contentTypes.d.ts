@@ -918,6 +918,31 @@ export interface ApiCourseResultCourseResult extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.SingleType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'Faq';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    title: Attribute.String;
+    description: Attribute.String;
+    faq: Attribute.Component<'faq.faq', true>;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiItemItem extends Schema.CollectionType {
   collectionName: 'items';
   info: {
@@ -1005,6 +1030,39 @@ export interface ApiResultResult extends Schema.CollectionType {
   };
 }
 
+export interface ApiTicketTicket extends Schema.CollectionType {
+  collectionName: 'tickets';
+  info: {
+    singularName: 'ticket';
+    pluralName: 'tickets';
+    displayName: 'Tickets';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    email: Attribute.String;
+    text: Attribute.Text;
+    subject: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::ticket.ticket',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::ticket.ticket',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -1026,8 +1084,10 @@ declare module '@strapi/types' {
       'api::category.category': ApiCategoryCategory;
       'api::course.course': ApiCourseCourse;
       'api::course-result.course-result': ApiCourseResultCourseResult;
+      'api::faq.faq': ApiFaqFaq;
       'api::item.item': ApiItemItem;
       'api::result.result': ApiResultResult;
+      'api::ticket.ticket': ApiTicketTicket;
     }
   }
 }

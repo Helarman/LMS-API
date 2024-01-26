@@ -79,6 +79,18 @@ export interface ExaminationsTest extends Schema.Component {
   };
 }
 
+export interface FaqFaq extends Schema.Component {
+  collectionName: 'components_faq_faqs';
+  info: {
+    displayName: 'FAQ';
+    description: '';
+  };
+  attributes: {
+    title: Attribute.String & Attribute.Required;
+    content: Attribute.Blocks;
+  };
+}
+
 export interface LessonsAudio extends Schema.Component {
   collectionName: 'components_lessons_audio';
   info: {
@@ -126,6 +138,7 @@ declare module '@strapi/types' {
       'examinations.test-answer': ExaminationsTestAnswer;
       'examinations.test-item': ExaminationsTestItem;
       'examinations.test': ExaminationsTest;
+      'faq.faq': FaqFaq;
       'lessons.audio': LessonsAudio;
       'lessons.text': LessonsText;
       'lessons.video': LessonsVideo;
