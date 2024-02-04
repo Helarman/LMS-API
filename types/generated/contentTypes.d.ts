@@ -1006,7 +1006,7 @@ export interface ApiResultResult extends Schema.CollectionType {
       'plugin::users-permissions.user'
     >;
     fileLink: Attribute.String;
-    count: Attribute.Integer & Attribute.DefaultTo<0>;
+    count: Attribute.Integer;
     progress: Attribute.Integer & Attribute.DefaultTo<0>;
     item: Attribute.Relation<
       'api::result.result',

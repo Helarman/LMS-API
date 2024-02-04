@@ -30,8 +30,7 @@
       "type": "string"
     },
     "count": {
-      "type": "integer",
-      "default": 0
+      "type": "integer"
     },
     "progress": {
       "type": "integer",
