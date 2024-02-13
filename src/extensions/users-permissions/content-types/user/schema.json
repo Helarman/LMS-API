@@ -33,8 +33,7 @@
     "password": {
       "type": "password",
       "minLength": 6,
-      "configurable": false,
-      "searchable": false
+      "configurable": false
     },
     "resetPasswordToken": {
       "type": "string",
